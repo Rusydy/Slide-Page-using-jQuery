@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>Slide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+</head>
+
+<body>
+    <div class="pages" id="page1">
+        <div class="next">
+            <button class="btn-next">Next</button>
+        </div>
+        <ul>
+            <li><img id="img1" src="https://via.placeholder.com/80" /></li>
+            <li><img id="img2" src="https://via.placeholder.com/80" /></li>
+            <li><img id="img3" src="https://via.placeholder.com/80" /></li>
+            <li><img id="img4" src="https://via.placeholder.com/80" /></li>
+            <li><img id="img5" src="https://via.placeholder.com/80" /></li>
+        </ul>
+    </div>
+    <div class="pages" id="page2">
+        <div class="previous">
+            <button class="btn-previous">Previous</button>
+        </div>
+        <div class="next">
+            <button class="btn-next">Next</button>
+        </div>
+        <ul>
+            <li><img id="img1" src="https://via.placeholder.com/80" /></li>
+            <li><img id="img2" src="https://via.placeholder.com/80" /></li>
+            <li><img id="img3" src="https://via.placeholder.com/80" /></li>
+            <li><img id="img4" src="https://via.placeholder.com/80" /></li>
+            <li><img id="img5" src="https://via.placeholder.com/80" /></li>
+        </ul>
+    </div>
+    <div class="pages" id="page3">
+        <div class="previous">
+            <button class="btn-previous">Previous</button>
+        </div>
+        <div class="next">
+            <button class="btn-next">Next</button>
+        </div>
+        <ul>
+            <li><img id="img1" src="https://via.placeholder.com/80" /></li>
+            <li><img id="img2" src="https://via.placeholder.com/80" /></li>
+            <li><img id="img3" src="https://via.placeholder.com/80" /></li>
+            <li><img id="img4" src="https://via.placeholder.com/80" /></li>
+            <li><img id="img5" src="https://via.placeholder.com/80" /></li>
+        </ul>
+    </div>
+    <div class="pages" id="page4">
+        <div class="previous">
+            <button class="btn-previous">Previous</button>
+        </div>
+        <div class="generate">
+            <button class="btn-generate">Generate</button>
+        </div>
+        <ul>
+            <li><img id="img1" src="https://via.placeholder.com/80" /></li>
+            <li><img id="img2" src="https://via.placeholder.com/80" /></li>
+            <li><img id="img3" src="https://via.placeholder.com/80" /></li>
+            <li><img id="img4" src="https://via.placeholder.com/80" /></li>
+            <li><img id="img5" src="https://via.placeholder.com/80" /></li>
+        </ul>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    // jQuery count length of class pages
+    var pages = $('.pages').length;
+
+    let currentPage = 1;
+    $('.pages').hide();
+    $('#page' + 1).show();
+
+    // jQuery click event on button next
+    $('.btn-next').click(function() {
+        // console.log('next');
+        // console.log(currentPage);
+        if (currentPage < pages) {
+            currentPage++;
+            $('.pages').hide();
+            $('#page' + currentPage).show();
+        }
+    });
+
+    // jQuery click event on button previous
+    $('.btn-previous').click(function() {
+        // console.log('previous');
+        // console.log(currentPage);
+        if (currentPage > 1) {
+            currentPage--;
+            $('.pages').hide();
+            $('#page' + currentPage).show();
+        }
+    });
+
+
+</script>
+
+<style>
+    article, aside, figure, footer, header, hgroup, menu, nav, section {
+        display: block;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    ul li {
+        display: inline;
+    }
+
+    ul li img {
+        border: 2px solid white;
+        cursor: pointer;
+    }
+
+    ul li img:hover {
+        border: 2px solid black;
+    }
+
+    ul li img.hover {
+        border: 2px solid black;
+    }
+</style>
